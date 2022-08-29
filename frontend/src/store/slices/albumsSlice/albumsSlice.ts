@@ -9,7 +9,7 @@ export const fetchAlbums = createAsyncThunk(
   async (query: number) => await AlbumsApi.fetchAlbums(String(query)),
 )
 type SliceState = {
-  albums: IAlbum | undefined
+  albums: IAlbum[] | undefined
   status: LoadingStatus
 }
 

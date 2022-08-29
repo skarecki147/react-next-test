@@ -1,14 +1,13 @@
+import '@fontsource/readex-pro'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { Provider } from 'react-redux'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import App from './App'
 import './index.css'
-import { SongsList } from './pages/SongsList'
+import { SongsList } from './pages/ResultList'
 import reportWebVitals from './reportWebVitals'
 import store from './store/store'
-import "@fontsource/readex-pro"
-
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
   <React.StrictMode>
@@ -16,7 +15,7 @@ root.render(
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<App />} />
-          <Route path="songslist" element={<SongsList />} />
+          <Route path="result" element={<SongsList />} />
         </Routes>
       </BrowserRouter>
     </Provider>

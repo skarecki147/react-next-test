@@ -26,8 +26,6 @@ export const songsSlice = createSlice({
       state.status = LoadingStatus.LOADING
     },
     [fetchSongs.fulfilled.type]: (state, action) => {
-      console.log('songs', action.payload.results)
-      debugger
       state.songs = action.payload.results
       state.status = LoadingStatus.SUCCESS
     },

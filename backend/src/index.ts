@@ -3,7 +3,7 @@ import bodyParser from 'body-parser'
 import express, { Request, Response } from 'express'
 
 const app = express()
-const testURL = 'https://itunes.apple.com/search?term=jack+johnson.'
+const urlLookup = 'https://itunes.apple.com/lookup?amgArtistId='
 const url: string = 'https://itunes.apple.com/search?term='
 const allArtistQuery = '&entity=allArtist&attribute=allArtistTerm'
 const albumQuery = '&entity=album'
@@ -44,7 +44,7 @@ async function getArtists(query: string) {
 }
 
 async function getAlbum(query: string) {
-  let queryUrl = `${url}${query}${albumQuery}`
+  let queryUrl = `${urlLookup}${query}${albumQuery}`
   queryUrl = queryUrl.replace(' ', '+')
   console.log('queryUrl', queryUrl)
   try {
@@ -69,7 +69,7 @@ async function getAlbum(query: string) {
 }
 
 async function getSongs(query: string) {
-  let queryUrl = `${url}${query}${songQuery}`
+  let queryUrl = `${urlLookup}${query}${songQuery}`
   queryUrl = queryUrl.replace(' ', '+')
   console.log('queryUrl', queryUrl)
   try {
