@@ -5,11 +5,17 @@ import { ISong, LoadingStatus } from '../../types'
 
 export const fetchSongs = createAsyncThunk(
   'songs/fetchSongs',
-  async (query: string) => await SongsApi.fetchSongs(query),
+  async (query: number) => await SongsApi.fetchSongs(String(query)),
 )
-type SliceState = { songs: ISong[] | undefined; status: LoadingStatus }
+type SliceState = {
+  songs: ISong[] | undefined
+  status: LoadingStatus
+}
 
-const initialState: SliceState = { songs: undefined, status: LoadingStatus.NEVER }
+const initialState: SliceState = {
+  songs: undefined,
+  status: LoadingStatus.NEVER,
+}
 
 export const songsSlice = createSlice({
   name: 'songs',
@@ -20,8 +26,10 @@ export const songsSlice = createSlice({
       state.status = LoadingStatus.LOADING
     },
     [fetchSongs.fulfilled.type]: (state, action) => {
-      state.status = LoadingStatus.SUCCESS
+      console.log('songs', action.payload.results)
+      debugger
       state.songs = action.payload.results
+      state.status = LoadingStatus.SUCCESS
     },
     [fetchSongs.rejected.type]: (state, action) => {
       state.status = LoadingStatus.ERROR
@@ -29,7 +37,7 @@ export const songsSlice = createSlice({
   },
 })
 
-export const songSelector = (state: RootState) => state.songsSlice.songs
+export const songsSelector = (state: RootState) => state.songsSlice.songs
 export const loadingStatusSelector = (state: RootState) => state.songsSlice.status
 
 export default songsSlice.reducer

@@ -8,7 +8,8 @@ interface IResponse {
 
 export const SongsApi = {
   fetchSongs: async (query: string): Promise<IResponse> => {
-    const { data } = await instance.get<IResponse>(query)
+    debugger
+    const { data } = await instance.get<IResponse>(`/songs/id/${query}`)
     return data
   },
 }

@@ -2,7 +2,7 @@ import { Box, Button, TextField } from '@mui/material'
 import { ChangeEvent, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { fetchSongs, loadingStatusSelector } from '../../store/slices/songsSlice/songsSlice'
+import { fetchArtists, loadingStatusSelector } from '../../store/slices/artistsSlice/artistsSlice'
 import { AppDispatch } from '../../store/store'
 import { LoadingStatus } from '../../store/types'
 
@@ -21,7 +21,7 @@ function SearchBar() {
 
   const handleClickSearchButton = () => {
     if (searchValue !== '') {
-      dispatch(fetchSongs(searchValue))
+      dispatch(fetchArtists(searchValue))
       navigate('/songslist')
     }
   }
