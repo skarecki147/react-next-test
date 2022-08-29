@@ -5,7 +5,9 @@ import { useNavigate } from 'react-router-dom'
 import { fetchArtists, loadingStatusSelector } from '../../store/slices/artistsSlice/artistsSlice'
 import { AppDispatch } from '../../store/store'
 import { LoadingStatus } from '../../store/types'
-
+import mGlassIcon from '../../assets/mGlassIcon.svg'
+import Logo from '../../assets/Logo.svg'
+import './SearchBar.css'
 function SearchBar() {
   const dispatch = useDispatch<AppDispatch>()
   const navigate = useNavigate()
@@ -27,17 +29,26 @@ function SearchBar() {
   }
 
   return (
-    <Box
-      sx={{
-        width: 500,
-        maxWidth: '100%',
-      }}>
-      <TextField fullWidth label="fullWidth" id="fullWidth" onChange={handleOnChange} />
-      <Button variant="outlined" onClick={handleClickSearchButton}>
-        Search
-      </Button>
-      <Button variant="outlined">I am lucky</Button>
-    </Box>
+      <Box className={'main-container'}>
+
+          <div className={'title-box'}>
+              <img className={'logo-icon'} src={Logo} alt="logo-icon"/>
+              <p className={'title'}>ReactMusic</p>
+          </div>
+          <div className={'input-box'}>
+              {/*<TextField className={'search-input'} label="Search" id="fullWidth" onChange={handleOnChange}/>*/}
+              <input className={'search-input'} id={'searchQuery'} placeholder="Search songs, albums or artists..."
+                     onChange={handleOnChange}/>
+              {/*<Input className={'search-input'} onChange={handleOnChange}/>*/}
+              <img className={'search-icon'} src={mGlassIcon} alt="magnifying glass"/>
+          </div>
+          <div className={'btn-box'}>
+              <Button className={'btn'} variant="outlined" onClick={handleClickSearchButton}>
+                  <span className={'button-text'}>Search</span>
+              </Button>
+              <Button className={'btn'} variant="outlined"><span className={'button-text'}>I am lucky</span></Button>
+          </div>
+      </Box>
   )
 }
 export default SearchBar

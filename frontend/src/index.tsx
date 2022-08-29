@@ -7,6 +7,7 @@ import './index.css'
 import { SongsList } from './pages/SongsList'
 import reportWebVitals from './reportWebVitals'
 import store from './store/store'
+import "@fontsource/readex-pro"
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
