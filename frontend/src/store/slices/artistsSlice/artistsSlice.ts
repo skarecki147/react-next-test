@@ -44,6 +44,6 @@ export const artistsSlice = createSlice({
 
 export const artistsSelector = (state: RootState) => state.artistsSlice.artists
 export const artistsIdSelector = (state: RootState) => state.artistsSlice.artistsId
-export const loadingStatusSelector = (state: RootState) => state.songsSlice.status
+export const loadingStatusSelector = (state: RootState) => state.artistsSlice.status
 
 export default artistsSlice.reducer
