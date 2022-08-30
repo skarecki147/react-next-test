@@ -34,7 +34,7 @@ function App() {
                         <ButtonText>Search</ButtonText>
                     </ButtonWrapper>
                     <ButtonWrapper>
-                        <ButtonText>I am lucky</ButtonText>
+                        <ButtonText>I'm feeling lucky</ButtonText>
                     </ButtonWrapper>
                 </ButtonBox>
             </SearchBar>
