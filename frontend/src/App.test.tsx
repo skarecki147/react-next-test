@@ -19,7 +19,9 @@ test('renders learn react link', () => {
   )
   const buttonSearch = screen.getByText(/Search/i)
   const buttonIAmLucky = screen.getByText(/I am lucky/i)
+  const title = screen.getByText(/ReactMusic/i)
 
   expect(buttonSearch).toBeInTheDocument()
   expect(buttonIAmLucky).toBeInTheDocument()
+  expect(title).toBeInTheDocument()
 })
