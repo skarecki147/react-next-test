@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import { Box, Button, Card, Link, Typography } from '@mui/material'
+import {Box, Button, Card, Link, Typography} from '@mui/material'
 
 export const MainContainer = styled('div')`
   display: flex;
@@ -33,6 +33,11 @@ export const ButtonWrapper = styled(Button)`
   border: solid 1px #dddddd !important;
   border-radius: 30px !important;
   margin: 0 10px;
+
+  &:hover {
+    border: solid 1px #2563EB !important;
+
+  }
 `
 export const CardWrapper = styled(Card)`
   max-width: 200px;
@@ -54,6 +59,8 @@ export const CardsColumn = styled('div')`
 
   flex-wrap: wrap;
   align-items: center;
+
+
 `
 export const ColumnTitle = styled(Typography)`
   font-family: 'Readex Pro';

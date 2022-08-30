@@ -36,6 +36,12 @@ export const ButtonWrapper = styled(Button)`
   border: solid 1px #DDDDDD !important;
   border-radius: 30px !important;
   margin: 0 10px;
+  transition: all 1s;
+
+  &:hover {
+    border: solid 1px #2563EB !important;
+
+  }
 `
 export const ButtonBox = styled('div')`
   margin-top: 10px;
@@ -54,4 +60,9 @@ export const ButtonText = styled('span')`
   align-items: center;
   letter-spacing: 0.1px;
   color: #2563EB;
+  transition: all 1s;
+
+  &:hover {
+    //color: white;
+  }
 `

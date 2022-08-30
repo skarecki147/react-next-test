@@ -3,6 +3,7 @@ import styled from '@emotion/styled'
 export const CustomInput = styled('input')`
   border: #dddddd solid 1px;
   width: 580px;
+  //min-width: 580px;
   height: 44px;
   border-radius: 25px;
   padding-left: 20px;
