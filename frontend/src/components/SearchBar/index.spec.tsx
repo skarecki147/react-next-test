@@ -17,7 +17,9 @@ describe('SearchBar component', () => {
     const component = render(
       <Router>
         <Provider store={store}>
-          <SearchBar setSearchValue={setSearchValue}>
+          <SearchBar
+            setSearchValue={setSearchValue}
+            handleClickSearchButton={handleClickSearchButton}>
             <Button variant="outlined" onClick={handleClickSearchButton}>
               <span>Search</span>
             </Button>
@@ -44,7 +46,9 @@ describe('SearchBar component', () => {
     const component = render(
       <Router>
         <Provider store={store}>
-          <SearchBar setSearchValue={setSearchValue}>
+          <SearchBar
+            setSearchValue={setSearchValue}
+            handleClickSearchButton={handleClickSearchButton}>
             <Button variant="outlined" onClick={handleClickSearchButton}>
               <span>Search</span>
             </Button>
@@ -66,7 +70,9 @@ describe('SearchBar component', () => {
     const component = render(
       <Router>
         <Provider store={store}>
-          <SearchBar setSearchValue={setSearchValue}>
+          <SearchBar
+            setSearchValue={setSearchValue}
+            handleClickSearchButton={handleClickSearchButton}>
             <Button variant="outlined" onClick={handleClickSearchButton}>
               <span>Search</span>
             </Button>
@@ -89,7 +95,9 @@ describe('SearchBar component', () => {
     const component = render(
       <Router>
         <Provider store={store}>
-          <SearchBar setSearchValue={setSearchValue}>
+          <SearchBar
+            setSearchValue={setSearchValue}
+            handleClickSearchButton={handleClickSearchButton}>
             <Button variant="outlined" onClick={handleClickSearchButton}>
               <span>Search</span>
             </Button>

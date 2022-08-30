@@ -1,12 +1,12 @@
 import { combineReducers } from '@reduxjs/toolkit'
-import albumsSlice from './slices/albumsSlice/albumsSlice'
-import artistsSlice from './slices/artistsSlice/artistsSlice'
-import songsSlice from './slices/songsSlice/songsSlice'
+import AlbumsSlice from './slices/albumsSlice/albumsSlice'
+import ArtistsSlice from './slices/artistsSlice/artistsSlice'
+import SongsSlice from './slices/songsSlice/songsSlice'
 
 const rootReducer = combineReducers({
-  artistsSlice,
-  songsSlice,
-  albumsSlice,
+  AlbumsSlice,
+  SongsSlice,
+  ArtistsSlice,
 })
 
 type RootReducerType = typeof rootReducer

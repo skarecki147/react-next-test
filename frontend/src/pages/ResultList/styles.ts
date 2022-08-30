@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import {Box, Button, Card, Typography} from '@mui/material'
+import { Box, Button, Card, Link, Typography } from '@mui/material'
 
 export const MainContainer = styled('div')`
   display: flex;
@@ -12,11 +12,11 @@ export const AppBar = styled('div')`
   justify-content: space-around;
 `
 export const LogoIcon = styled('img')`
+  cursor: pointer;
   flex: 1;
   height: 40px;
   width: 40px;
   margin: 10px 20px;
-
 `
 
 export const SearchRow = styled('div')`
@@ -26,12 +26,11 @@ export const SearchRow = styled('div')`
   width: 80%;
   justify-content: center;
   padding: 5px 40px 80px 40px;
-
 `
 export const ButtonWrapper = styled(Button)`
   width: 162px;
   height: 48px;
-  border: solid 1px #DDDDDD !important;
+  border: solid 1px #dddddd !important;
   border-radius: 30px !important;
   margin: 0 10px;
 `
@@ -79,13 +78,11 @@ export const SongRow = styled(Box)`
   align-items: center;
   padding: 5px 20px 5px 10px;
   width: 100%;
-
 `
 export const SongIcon = styled('img')`
   height: 55px;
   width: 55px;
   border-radius: 5px;
-
 `
 export const SongTitle = styled(Typography)`
   font-family: 'Readex Pro';
@@ -94,11 +91,10 @@ export const SongTitle = styled(Typography)`
   font-size: 24px;
   line-height: 29px;
   text-align: center;
-  color: #2F2B2B;
+  color: #2f2b2b;
   margin-left: 10px;
   max-height: 60px;
   overflow: hidden;
-
 `
 export const HeartIcon = styled('img')`
   height: 30px;
@@ -114,7 +110,7 @@ export const ButtonText = styled('span')`
   display: flex;
   align-items: center;
   letter-spacing: 0.1px;
-  color: #2563EB;
+  color: #2563eb;
 `
 export const SkeletonWrapper = styled('div')`
   max-width: 200px;
@@ -125,7 +121,6 @@ export const SkeletonWrapper = styled('div')`
   border-radius: 20px;
 `
 export const SongSkeletonWrapper = styled('div')`
-
   margin-top: 20px;
   border-radius: 20px;
   display: flex;
@@ -134,4 +129,7 @@ export const SongSkeletonWrapper = styled('div')`
   align-items: center;
 
   width: 100%;
+`
+export const LinkWrapper = styled(Link)`
+  text-decoration: none;
 `

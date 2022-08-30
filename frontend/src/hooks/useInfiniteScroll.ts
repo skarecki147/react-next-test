@@ -19,11 +19,11 @@ const useInfiniteScroll = (
   }, [isFetching])
 
   function handleScroll() {
-    if (
-      window.innerHeight + document.documentElement.scrollTop !==
-      document.documentElement.offsetHeight
-    )
-      return
+    const screenHeight = Math.round(window.innerHeight + document.documentElement.scrollTop)
+    console.log('screenHeight', screenHeight)
+    console.log('document.documentElement.offsetHeight', document.documentElement.offsetHeight)
+
+    if (screenHeight !== document.documentElement.offsetHeight) return
     setIsFetching(true)
   }
 
