@@ -31,8 +31,8 @@ describe('ResultList page', () => {
 
   it('The page should show column correctly count of artists', () => {
     store = mockStore(initialState)
-    const artistName = 'Eminem'
-    const artistsCount = 3
+    const artistName = 'Bob Marley'
+    const artistsCount = 1
     const component = render(
       <Router>
         <Provider store={store}>
@@ -40,7 +40,7 @@ describe('ResultList page', () => {
         </Provider>
       </Router>,
     )
-    const titleSongs = component.queryAllByText(artistName)
-    expect(titleSongs).toHaveLength(artistsCount)
+    const resultList = component.queryAllByText(artistName)
+    expect(resultList).toHaveLength(artistsCount)
   })
 })

@@ -4,18 +4,18 @@ import ReactDOM from 'react-dom/client'
 import { Provider } from 'react-redux'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import App from './App'
-import './index.css'
-import { SongsList } from './pages/ResultList'
+import { ResultList } from './pages/ResultList'
 import reportWebVitals from './reportWebVitals'
 import store from './store/store'
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
+
 root.render(
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<App />} />
-          <Route path="result" element={<SongsList />} />
+          <Route path="result" element={<ResultList />} />
         </Routes>
       </BrowserRouter>
     </Provider>

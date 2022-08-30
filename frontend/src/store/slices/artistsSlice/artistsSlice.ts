@@ -10,17 +10,26 @@ export const fetchArtists = createAsyncThunk(
 type SliceState = {
   artists: IArtists[] | undefined
   artistsId: number[] | undefined
+  inputSearchValue: string
   status: LoadingStatus
 }
 const initialState: SliceState = {
   artists: undefined,
   artistsId: undefined,
+  inputSearchValue: '',
   status: LoadingStatus.NEVER,
 }
 export const ArtistsSlice = createSlice({
   name: 'artists',
   initialState,
-  reducers: {},
+  reducers: {
+    setInputValue(state, action) {
+      state.inputSearchValue = action.payload
+    },
+    resetArtistId(state) {
+      state.artistsId = undefined
+    },
+  },
   extraReducers: {
     [fetchArtists.pending.type]: (state, action) => {
       state.status = LoadingStatus.LOADING
@@ -39,7 +48,11 @@ export const ArtistsSlice = createSlice({
     },
   },
 })
+export const { resetArtistId } = ArtistsSlice.actions
+export const { setInputValue } = ArtistsSlice.actions
 export const artistsSelector = (state: RootState) => state.ArtistsSlice.artists
 export const artistsIdSelector = (state: RootState) => state.ArtistsSlice.artistsId
 export const loadingArtistsStatusSelector = (state: RootState) => state.ArtistsSlice.status
+export const inputSearchValue = (state: RootState) => state.ArtistsSlice.inputSearchValue
+
 export default ArtistsSlice.reducer

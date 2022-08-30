@@ -3,7 +3,6 @@ import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
 import Logo from '../src/assets/Logo.svg'
-import './App.css'
 import { SearchBar } from './components/SearchBar'
 import { fetchArtists } from './store/slices/artistsSlice/artistsSlice'
 import { AppDispatch } from './store/store'
@@ -17,7 +16,7 @@ import {
   TitleBox,
 } from './styles'
 
-function App() {
+const App = () => {
   const [searchValue, setSearchValue] = useState('')
   const dispatch = useDispatch<AppDispatch>()
   const navigate = useNavigate()
@@ -44,7 +43,6 @@ function App() {
   }
 
   const handleRandomSearch = () => {
-    debugger
     const randomArtist = artistList[Math.floor(Math.random() * artistList.length)]
     dispatch(fetchArtists(randomArtist))
     navigate('/result')
@@ -62,7 +60,7 @@ function App() {
             <ButtonText>Search</ButtonText>
           </ButtonWrapper>
           <ButtonWrapper>
-            <ButtonText onClick={handleRandomSearch}>I'm feeling lucky</ButtonText>
+            <ButtonText onClick={handleRandomSearch}>Feeling lucky</ButtonText>
           </ButtonWrapper>
         </ButtonBox>
       </SearchBar>

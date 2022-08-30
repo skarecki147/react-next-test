@@ -1,12 +1,12 @@
 import { Button } from '@mui/material'
-import { fireEvent, render, waitFor } from '@testing-library/react'
+import { render, waitFor } from '@testing-library/react'
 import { Provider } from 'react-redux'
 import { BrowserRouter as Router } from 'react-router-dom'
 import configureStore from 'redux-mock-store'
+import { initialState } from '../../store/initialStateMock'
 import SearchBar from './SearchBar'
 
 describe('SearchBar component', () => {
-  const initialState = { artists: undefined, artistsId: undefined, status: 'NEVER' }
   const mockStore = configureStore()
   let store, wrapper
 
@@ -86,30 +86,5 @@ describe('SearchBar component', () => {
     const buttonSearch = component.getByText(/Search/i)
     buttonSearch.click()
     await waitFor(() => expect(handleClickSearchButton).toHaveBeenCalledTimes(1))
-  })
-
-  it('After typing in search input, input should show typing text', async () => {
-    store = mockStore(initialState)
-    const handleClickSearchButton = jest.fn()
-    const setSearchValue = jest.fn()
-    const component = render(
-      <Router>
-        <Provider store={store}>
-          <SearchBar
-            setSearchValue={setSearchValue}
-            handleClickSearchButton={handleClickSearchButton}>
-            <Button variant="outlined" onClick={handleClickSearchButton}>
-              <span>Search</span>
-            </Button>
-            <Button variant="outlined">
-              <span>I am lucky</span>
-            </Button>
-          </SearchBar>
-        </Provider>
-      </Router>,
-    )
-    const searchInput = component.getByPlaceholderText('Search songs, albums or artists...')
-    fireEvent.change(searchInput, { target: { value: 'Bob Marley' } })
-    await waitFor(() => expect(component.getByDisplayValue('Bob Marley')).toBeInTheDocument())
   })
 })

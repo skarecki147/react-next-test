@@ -24,15 +24,12 @@ export const songsSlice = createSlice({
       state.status = LoadingStatus.LOADING
     },
     [fetchSongs.fulfilled.type]: (state, action) => {
-      console.log('songs from slice', action.payload.results)
-
       const songs = action.payload.results
       // checking if collection includes the correct data
       const songWrapperType = 'track'
       const filteredSongs = songs.filter((song: any) => song.wrapperType === songWrapperType)
       state.songs = filteredSongs
       state.status = LoadingStatus.SUCCESS
-      console.log('filteredSongs from slice', filteredSongs)
     },
     [fetchSongs.rejected.type]: (state, action) => {
       state.status = LoadingStatus.ERROR
@@ -41,4 +38,5 @@ export const songsSlice = createSlice({
 })
 export const songsSelector = (state: RootState) => state.SongsSlice.songs
 export const loadingSongsStatusSelector = (state: RootState) => state.SongsSlice.status
+
 export default songsSlice.reducer

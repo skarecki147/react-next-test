@@ -1,8 +1,6 @@
 import { Dispatch, SetStateAction, useEffect, useState } from 'react'
 
 const useInfiniteScroll = (
-  start: number,
-  interval: number,
   fetchMoreListItems: () => void,
 ): [boolean, Dispatch<SetStateAction<boolean>>] => {
   const [isFetching, setIsFetching] = useState(false)
@@ -20,8 +18,6 @@ const useInfiniteScroll = (
 
   function handleScroll() {
     const screenHeight = Math.round(window.innerHeight + document.documentElement.scrollTop)
-    console.log('screenHeight', screenHeight)
-    console.log('document.documentElement.offsetHeight', document.documentElement.offsetHeight)
 
     if (screenHeight !== document.documentElement.offsetHeight) return
     setIsFetching(true)

@@ -3,10 +3,9 @@ import { Provider } from 'react-redux'
 import { BrowserRouter as Router } from 'react-router-dom'
 import configureStore from 'redux-mock-store'
 import App from './App'
-import { LoadingStatus } from './store/types'
+import { initialState } from './store/initialStateMock'
 
 test('renders learn react link', () => {
-  const initialState = { artists: undefined, artistsId: undefined, status: LoadingStatus.NEVER }
   const mockStore = configureStore()
   const store = mockStore(initialState)
 
@@ -18,7 +17,7 @@ test('renders learn react link', () => {
     </Router>,
   )
   const buttonSearch = screen.getByText(/Search/i)
-  const buttonIAmLucky = screen.getByText(/I am lucky/i)
+  const buttonIAmLucky = screen.getByText(/Feeling lucky/i)
   const title = screen.getByText(/ReactMusic/i)
 
   expect(buttonSearch).toBeInTheDocument()

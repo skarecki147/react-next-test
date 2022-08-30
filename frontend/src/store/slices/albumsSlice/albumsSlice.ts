@@ -30,7 +30,6 @@ export const AlbumsSlice = createSlice({
       const filteredAlbums = albums.filter((album: any) => album.wrapperType === albumWrapperType)
       state.albums = filteredAlbums
       state.status = LoadingStatus.SUCCESS
-      console.log('albums from slice', filteredAlbums)
     },
     [fetchAlbums.rejected.type]: (state, action) => {
       state.status = LoadingStatus.ERROR
@@ -39,4 +38,5 @@ export const AlbumsSlice = createSlice({
 })
 export const albumsSelector = (state: RootState) => state.AlbumsSlice.albums
 export const loadingAlbumsStatusSelector = (state: RootState) => state.AlbumsSlice.status
+
 export default AlbumsSlice.reducer

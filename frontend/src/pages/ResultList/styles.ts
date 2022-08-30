@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import {Box, Button, Card, Link, Typography} from '@mui/material'
+import { Box, Button, Card, Link, Typography } from '@mui/material'
 
 export const MainContainer = styled('div')`
   display: flex;
@@ -35,8 +35,7 @@ export const ButtonWrapper = styled(Button)`
   margin: 0 10px;
 
   &:hover {
-    border: solid 1px #2563EB !important;
-
+    border: solid 1px #2563eb !important;
   }
 `
 export const CardWrapper = styled(Card)`
@@ -59,8 +58,6 @@ export const CardsColumn = styled('div')`
 
   flex-wrap: wrap;
   align-items: center;
-
-
 `
 export const ColumnTitle = styled(Typography)`
   font-family: 'Readex Pro';
@@ -71,9 +68,9 @@ export const ColumnTitle = styled(Typography)`
   display: flex;
   align-items: center;
   letter-spacing: 0.1px;
-  color: #000000;
   margin-bottom: 50px;
   margin-left: 20px;
+  color: #2563eb;
 `
 export const SongRow = styled(Box)`
   box-shadow: 1px 2px 19px 1px rgba(82, 82, 82, 0.3);

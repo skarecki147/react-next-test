@@ -35,4 +35,5 @@ export const SearchIcon = styled('img')`
 `
 export const SearchBox = styled('div')`
   margin-bottom: 5px;
+  margin-top: 20px;
 `
